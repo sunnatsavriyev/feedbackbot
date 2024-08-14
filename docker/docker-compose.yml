@@ -1,0 +1,29 @@
+
+
+volumes:
+  postgres_data:
+    
+services:
+  web:
+    container_name: feedback_bot_web
+    build: 
+      context: ../../feedbot
+      dockerfile: docker/Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ../../feedbot:/web
+    ports:
+      - 8011:8011
+    command: /start.sh
+    entrypoint: /entrypoint.sh
+    restart: on-failure
+    env_file: ../.env
+
+  db:
+    container_name: feedback_bot_db
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file: ../.env.db
+
