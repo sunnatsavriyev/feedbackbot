@@ -10,5 +10,7 @@ class FeedbackAdmin(admin.ModelAdmin):
         "craeted_at",
         "status"
     )
+
+    list_filter = ["status"]
    
 
