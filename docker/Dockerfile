@@ -25,7 +25,7 @@ COPY ./scripts/ /
 
 
 # Django serverini ishga tushirish uchun
-# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8011"]
 
 
 RUN sed -i 's/\r$//g' /start.sh && chmod +x /start.sh && \

@@ -7,5 +7,8 @@ from .models import Feedback
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = (
         "feedback",
-        "craeted_at"
+        "craeted_at",
+        "status"
     )
+   
+
